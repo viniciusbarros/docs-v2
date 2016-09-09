@@ -160,3 +160,20 @@ function slug_register_something_random() {
 ```
 
 In the previous examples, helper functions were used to align the arguments passed by the API to `get_post_meta` and `update_post_meta`. In this example, an arbitrary function is called, which presumably accepts arguments in a compatible fashion.
+
+
+### Disabling the initial (default) routes
+
+```php
+<?php
+/**
+ * Add it in your functions.php file in order to disable
+ * the creation of the initial/default routes
+ */
+remove_action( 'rest_api_init', 'create_initial_rest_routes', 0 );
+
+```
+
+In some specific cases you may want to disable the initial routes and keep working only with your custom ones.
+This example shows how to disable the creation of the the initial routes by removing the action create_initial_rest_routes from the rest_api_init. 
+
